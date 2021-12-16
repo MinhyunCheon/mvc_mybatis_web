@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import encore.ctrl.util.Controller;
 import encore.ctrl.view.View;
@@ -24,9 +25,25 @@ public class LoginController implements Controller {
 		
 		// param 값을 dto 객체에 담는다
 		UserDTO param = new UserDTO(id, pwd);
-		UserVO user = service.loginService(param);
+		UserVO user = (UserVO) service.loginService(param);
+		View view = new View();
 		
-		return new View("test.jsp", true);
+		System.out.println(user);
+		
+		if(user != null) {
+			HttpSession session = request.getSession();
+			session.setAttribute("loginUser", user);
+			
+			view.setPath("main.jsp");
+			view.setSend(true);
+		}
+		
+		else {
+			view.setPath("test.jsp");
+			view.setSend(true);
+		}
+		
+		return view;
 	}
 	
 }
