@@ -33,6 +33,8 @@ public class DispatcherSevlet extends HttpServlet {
 		Controller ctrl = factory.GetBean(uri);
 		View view = ctrl.execute(request, response);
 		
+		
+		
 		if(view.isSend()) {
 			RequestDispatcher rd = request.getRequestDispatcher(view.getPath());
 			rd.forward(request, response);

@@ -21,6 +21,8 @@
 			<label>비밀번호</label>
 			<input type = "password" placeholder = "비밀번호" name = "pwd" />
 			<input type = "submit" value = "로그인" />
+			
+			<a href = "registerForm.encore">회원가입</a>
 		</form>
 	<%--
 	}
@@ -40,7 +42,7 @@
 	</div>
 	
 	<div align = "left">
-		<a href = "">게시물 목록보기</a>
+		<a href = "list.encore">게시물 목록보기</a>
 	</div>
 </body>
 </html>

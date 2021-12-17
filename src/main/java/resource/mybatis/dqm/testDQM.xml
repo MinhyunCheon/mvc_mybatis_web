@@ -7,35 +7,7 @@
 	<select id="loginRow" parameterType="user_dto" resultType="user_vo">
 		SELECT ID, PWD, NAME, POINT FROM USER_TBL WHERE ID = #{id} AND PWD = #{pwd}
 	</select>
+	<insert id="joinRow" parameterType="user_vo">
+		INSERT INTO USER_TBL (ID, PWD, NAME, POINT) VALUES (#{id}, #{pwd}, #{name}, #{point})
+	</insert>
 </mapper>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
