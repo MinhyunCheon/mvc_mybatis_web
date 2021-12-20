@@ -32,4 +32,10 @@ public class BbsDaoImpl implements BbsDao {
 		return session.selectList("encore.bbs.selectListAll");
 	}
 
+	@Override
+	public int insertBbs(Object obj) {
+		System.out.println("BbsDaoImpl Insert Bbs");
+		return session.insert("encore.bbs.insertBbs", obj);
+	}
+
 }

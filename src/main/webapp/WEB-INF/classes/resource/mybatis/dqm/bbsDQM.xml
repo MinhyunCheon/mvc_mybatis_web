@@ -4,8 +4,12 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="encore.bbs">
+<!-- insert와 select를 동시에 수행할 때 select가 갱신되지 않으면
+	flushCache="true" useCache="true"를 통해 캐시 제거 -->
 	<select id="selectListAll"
-			resultType="bbs_vo">
+			resultType="bbs_vo"
+			flushCache="true"
+			useCache="true">
 		SELECT
 			SEQ
 			, SUBJECT
@@ -14,6 +18,18 @@
 			, TO_CHAR(REGDATE, 'YYYY-MM-DD') REGDATE
 			, VIEWCNT
 			FROM BBS_TBL
-			ORDER BY SEQ ASC
+			ORDER BY SEQ DESC
 	</select>
+	
+	<insert id="insertBbs" parameterType="bbs_vo">
+		INSERT INTO BBS_TBL VALUES (
+			BBS_SEQ.NEXTVAL
+			, #{subject}
+			, #{content}
+			, #{writer}
+			, SYSDATE
+			, 0
+		)
+	
+	</insert>
 </mapper>

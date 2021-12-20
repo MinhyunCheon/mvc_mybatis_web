@@ -13,9 +13,15 @@ public class BbsSvImpl implements BbsSv {
 	}
 
 	@Override
-	public List<Object> BbsListService() {
+	public List<Object> bbsListService() {
 		System.out.println("BbsSvImpl BbsListService");
 		return dao.selectBbsAll();
+	}
+
+	@Override
+	public int insertBbsService(Object obj) {
+		System.out.println("BbsSvImpl BbsInsertService");
+		return dao.insertBbs(obj);
 	}
 
 }

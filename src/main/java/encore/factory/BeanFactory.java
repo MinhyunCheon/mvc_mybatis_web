@@ -3,6 +3,8 @@ package encore.factory;
 import java.util.HashMap;
 import java.util.Map;
 
+import encore.bbs.ctrl.PostController;
+import encore.bbs.ctrl.InsertPostController;
 import encore.bbs.ctrl.SelectBbsController;
 import encore.ctrl.util.Controller;
 import encore.intro.ctrl.IndexController;
@@ -22,7 +24,9 @@ public class BeanFactory {
 		map.put("/logout.encore", new LogoutController());
 		map.put("/registerForm.encore", new RegisterController());
 		map.put("/join.encore", new JoinController());
-		map.put("/list.encore", new SelectBbsController());
+		map.put("/bbs/list.encore", new SelectBbsController());
+		map.put("/bbs/post.encore", new PostController());
+		map.put("/bbs/postInsert.encore", new InsertPostController());		
 	}
 	
 	public synchronized static BeanFactory getInstence() {

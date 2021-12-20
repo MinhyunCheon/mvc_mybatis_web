@@ -42,7 +42,7 @@
 	</div>
 	
 	<div align = "left">
-		<a href = "list.encore">게시물 목록보기</a>
+		<a href = "/bbs/list.encore">게시물 목록보기</a>
 	</div>
 </body>
 </html>

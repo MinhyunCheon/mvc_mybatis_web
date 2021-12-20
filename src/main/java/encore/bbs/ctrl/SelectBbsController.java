@@ -19,7 +19,7 @@ public class SelectBbsController implements Controller {
 	@Override
 	public View execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Select Bbs Controller");
-		List<Object> list = service.BbsListService();
+		List<Object> list = service.bbsListService();
 //		Iterator<Object> it = list.iterator();
 //		
 //		while(it.hasNext()) {
@@ -28,6 +28,6 @@ public class SelectBbsController implements Controller {
 		
 		request.setAttribute("bbsList", list);
 		
-		return new View("bbsList.jsp", true);
+		return new View("/bbs/bbs_index.jsp", true);
 	}
 }
