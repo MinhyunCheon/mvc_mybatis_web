@@ -38,11 +38,11 @@
 	<%--
 	}
 	--%>
-	</c:if>
 	</div>
 	
 	<div align = "left">
 		<a href = "/bbs/list.encore">게시물 목록보기</a>
 	</div>
+	</c:if>
 </body>
 </html>
