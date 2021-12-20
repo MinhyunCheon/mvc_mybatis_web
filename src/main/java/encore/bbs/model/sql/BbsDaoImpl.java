@@ -38,4 +38,15 @@ public class BbsDaoImpl implements BbsDao {
 		return session.insert("encore.bbs.insertBbs", obj);
 	}
 
+	@Override
+	public Object selectBbs(Object obj) {
+		System.out.println("BbsDaoImpl Select Bbs");
+		return session.selectOne("encore.bbs.selectBbs", obj);
+	}
+
+	@Override
+	public int updateViewCnt(Object obj) {
+		return session.update("encore.bbs.updateViewCnt", obj);
+	}
+
 }

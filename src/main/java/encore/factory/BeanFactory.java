@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import encore.bbs.ctrl.PostController;
+import encore.bbs.ctrl.ReadController;
 import encore.bbs.ctrl.InsertPostController;
 import encore.bbs.ctrl.SelectBbsController;
 import encore.ctrl.util.Controller;
@@ -26,7 +27,8 @@ public class BeanFactory {
 		map.put("/join.encore", new JoinController());
 		map.put("/bbs/list.encore", new SelectBbsController());
 		map.put("/bbs/post.encore", new PostController());
-		map.put("/bbs/postInsert.encore", new InsertPostController());		
+		map.put("/bbs/postInsert.encore", new InsertPostController());
+		map.put("/bbs/read.encore", new ReadController());	
 	}
 	
 	public synchronized static BeanFactory getInstence() {

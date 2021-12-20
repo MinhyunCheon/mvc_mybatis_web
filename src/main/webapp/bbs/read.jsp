@@ -1,11 +1,12 @@
 <%@ page 	language="java" 
-					contentType="text/html; charset=EUC-KR"
-    				pageEncoding="EUC-KR" %>
+					contentType="text/html; charset=UTF-8"
+    				pageEncoding="UTF-8" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
 body,td {
@@ -24,22 +25,22 @@ body,td {
 
 	<table align=center width=70% border=0 cellspacing=3 cellpadding=0>
 		<tr>
-			<td align=left><font color=brown>oooo</font>´ÔÀÇ ±ÛÀÔ´Ï´Ù.</td>
-			<td align=right>Á¶È¸¼ö ooo</td>
+			<td align=left><font color=brown>${ bbs.writer }</font>ë‹˜ì˜ ê¸€ì…ë‹ˆë‹¤.</td>
+			<td align=right>ì¡°íšŒìˆ˜ ${ bbs.viewCnt }</td>
 		<tr>
 			<td colspan=2>
 				<table border=0 cellpadding=3 cellspacing=0 width=100%>
 					<tr align=right>
 					<tr align=center>
-						<td bgcolor=#dddddd width=10%>ÀÛ¼ºÀÚ</td>
-						<td align=center bgcolor=#ffffe8><a href="mailto:">ooo</a>
+						<td bgcolor=#dddddd width=10%>ì‘ì„±ì</td>
+						<td align=center bgcolor=#ffffe8><a href="mailto:">${ bbs.writer }</a>
 						</td>
 						
 					<tr align=center>
-						<td bgcolor=#dddddd>Á¦ ¸ñ</td>
-						<td bgcolor=#ffffe8 colspan=3>oooo</td>
+						<td bgcolor=#dddddd>ì œ ëª©</td>
+						<td bgcolor=#ffffe8 colspan=3>${ bbs.subject }</td>
 					<tr>
-						<td colspan=4><br>oooo<br></td>
+						<td colspan=4><br>${ bbs.content }<br></td>
 					<tr>
 						<td colspan=4 align=right>oooo
 						</td>
@@ -49,10 +50,10 @@ body,td {
 		<tr>
 			<td align=center colspan=2>
 				<hr size=1> 
-				[ <a href="">¸ñ ·Ï</a> | 
-				  <a href="">¼ö Á¤</a> | 
-				  <a href="">´ä º¯</a> | 
-				  <a href="">»è Á¦</a> ]<br>
+				[ <a href="">ëª© ë¡</a> | 
+				  <a href="">ìˆ˜ ì •</a> | 
+				  <a href="">ë‹µ ë³€</a> | 
+				  <a href="">ì‚­ ì œ</a> ]<br>
 			</td>
 		</tr>
 	</table>

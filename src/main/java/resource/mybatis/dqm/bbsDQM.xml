@@ -30,6 +30,24 @@
 			, SYSDATE
 			, 0
 		)
-	
 	</insert>
+	
+	<select id="selectBbs"
+			resultType="bbs_vo"
+			flushCache="true"
+			useCache="true">
+		SELECT
+			SEQ
+			, SUBJECT
+			, CONTENT
+			, WRITER
+			, TO_CHAR(REGDATE, 'YYYY-MM-DD') REGDATE
+			, VIEWCNT
+			FROM BBS_TBL
+			WHERE SEQ = #{seq}
+	</select>
+	
+	<update id="updateViewCnt" parameterType="bbs_vo">
+			UPDATE BBS_TBL SET VIEWCNT = VIEWCNT + 1 WHERE SEQ = #{seq}
+	</update>
 </mapper>

@@ -24,4 +24,11 @@ public class BbsSvImpl implements BbsSv {
 		return dao.insertBbs(obj);
 	}
 
+	@Override
+	public Object selectBbsService(Object obj) {
+		System.out.println("BbsSvImpl selectBbsService");
+		dao.updateViewCnt(obj);
+		return dao.selectBbs(obj);
+	}
+
 }

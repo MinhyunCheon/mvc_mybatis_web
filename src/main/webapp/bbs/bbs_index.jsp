@@ -41,7 +41,7 @@
 		<c:forEach var = "BbsVO" items = "${ bbsList }">
 		<tr> 
 			<td align=center>${BbsVO.seq}</td>
-			<td><a href="">${BbsVO.subject}</td>
+			<td><a href="read.encore?seq=${BbsVO.seq}">${BbsVO.subject}</td>
 			<td align=center>${BbsVO.writer}</a></td>
 			<td align=center>${BbsVO.regdate}</td>
 			<td align=center>${BbsVO.viewCnt}</td>
