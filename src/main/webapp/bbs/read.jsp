@@ -42,7 +42,7 @@ body,td {
 					<tr>
 						<td colspan=4><br>${ bbs.content }<br></td>
 					<tr>
-						<td colspan=4 align=right>oooo
+						<td colspan=4 align=right>${ bbs.regdate }
 						</td>
 					</tr>
 				</table>
@@ -51,12 +51,12 @@ body,td {
 			<td align=center colspan=2>
 				<hr size=1> 
 				[
-					<a href="">목 록</a> 
+					<a href="list.encore">목 록</a> 
 					<c:if test="${ loginUser.name == bbs.writer }">
 					|
-					<a href="">수 정</a>
+					<a href="update.encore?seq=${ bbs.seq }">수 정</a>
 					|
-					<a href="">삭 제</a>
+					<a href="deleteBbs.encore?seq=${ bbs.seq }">삭 제</a>
 					</c:if>
 				]<br>
 			</td>

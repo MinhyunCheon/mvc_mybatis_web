@@ -49,4 +49,14 @@ public class BbsDaoImpl implements BbsDao {
 		return session.update("encore.bbs.updateViewCnt", obj);
 	}
 
+	@Override
+	public int updateBbs(Object obj) {
+		return session.update("encore.bbs.updateBbs", obj);
+	}
+
+	@Override
+	public int deleteBbs(Object obj) {
+		return session.delete("encore.bbs.deleteBbs", obj);
+	}
+
 }

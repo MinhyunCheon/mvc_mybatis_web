@@ -31,4 +31,15 @@ public class BbsSvImpl implements BbsSv {
 		return dao.selectBbs(obj);
 	}
 
+	@Override
+	public int updateBbsService(Object obj) {
+		System.out.println("BbsSvImpl updateBbsService");
+		return dao.updateBbs(obj);
+	}
+
+	@Override
+	public int deleteBbsService(Object obj) {
+		return dao.deleteBbs(obj);
+	}
+
 }
