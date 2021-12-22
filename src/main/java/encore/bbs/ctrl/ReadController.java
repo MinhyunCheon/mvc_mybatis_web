@@ -23,6 +23,7 @@ public class ReadController implements Controller {
 		bv.setSeq(Integer.parseInt(request.getParameter("seq")));
 		
 		request.setAttribute("bbs", service.selectBbsService(bv));
+//		request.setAttribute("ip", addr);
 		
 		return new View("read.jsp", true);
 	}

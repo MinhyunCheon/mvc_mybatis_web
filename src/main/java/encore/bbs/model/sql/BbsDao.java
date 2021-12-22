@@ -9,4 +9,5 @@ public interface BbsDao {
 	public int updateViewCnt(Object obj);
 	public int updateBbs(Object obj);
 	public int deleteBbs(Object obj);
+	public List<Object> selectSearchBbs(Object obj);
 }

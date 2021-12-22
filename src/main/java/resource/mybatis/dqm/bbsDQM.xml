@@ -61,4 +61,21 @@
 	<delete id="deleteBbs" parameterType="bbs_vo">
 		DELETE FROM BBS_TBL WHERE SEQ = #{seq}
 	</delete>
+	
+	<select id="selectSearchBbs"
+			parameterType="filter_vo"
+			resultType="bbs_vo"
+			flushCache="true"
+			useCache="true">
+		SELECT
+			SEQ
+			, SUBJECT
+			, CONTENT
+			, WRITER
+			, TO_CHAR(REGDATE, 'YYYY-MM-DD') REGDATE
+			, VIEWCNT
+			FROM BBS_TBL
+			WHERE 1=1
+				<if test="searchCondition == 'subject'"> AND SUBJECT LIKE '%'||#{searchKeyword}||'%'</if>
+	</select>
 </mapper>

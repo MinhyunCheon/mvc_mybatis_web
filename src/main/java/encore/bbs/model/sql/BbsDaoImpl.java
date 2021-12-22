@@ -59,4 +59,10 @@ public class BbsDaoImpl implements BbsDao {
 		return session.delete("encore.bbs.deleteBbs", obj);
 	}
 
+	@Override
+	public List<Object> selectSearchBbs(Object obj) {
+		System.out.println("BbsDaoImpl Select Search Bbs");
+		return session.selectList("encore.bbs.selectSearchBbs", obj);
+	}
+
 }

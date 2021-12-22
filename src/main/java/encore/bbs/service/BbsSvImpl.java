@@ -42,4 +42,9 @@ public class BbsSvImpl implements BbsSv {
 		return dao.deleteBbs(obj);
 	}
 
+	@Override
+	public List<Object> selectSearchBbsService(Object obj) {
+		return dao.selectSearchBbs(obj);
+	}
+
 }
